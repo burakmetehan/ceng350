@@ -50,13 +50,25 @@
 							"subViews": [
 								{
 									"_type": "LabelView",
+									"_id": "AAAAAAGHdPvQNjOLJRA=",
+									"_parent": {
+										"$ref": "AAAAAAF4zHSxhQfsRvg="
+									},
+									"font": "Arial;26;0",
+									"left": 616,
+									"top": 661,
+									"width": 173,
+									"height": 26
+								},
+								{
+									"_type": "LabelView",
 									"_id": "AAAAAAGHbKB2M97q8Og=",
 									"_parent": {
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": 618,
-									"top": 661,
+									"left": 620,
+									"top": 709,
 									"width": 173,
 									"height": 26
 								},
@@ -67,8 +79,8 @@
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": 618,
-									"top": 661,
+									"left": 620,
+									"top": 709,
 									"width": 173,
 									"height": 26
 								},
@@ -79,8 +91,8 @@
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": 618,
-									"top": 661,
+									"left": 620,
+									"top": 709,
 									"width": 173,
 									"height": 26
 								},
@@ -91,8 +103,8 @@
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": 618,
-									"top": 661,
+									"left": 620,
+									"top": 709,
 									"width": 75.14990234375,
 									"height": 26
 								},
@@ -103,11 +115,11 @@
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": 618,
+									"left": 616,
 									"top": 666,
 									"width": 173,
 									"height": 26,
-									"text": "AfetBilgi.com",
+									"text": "afetbilgi.com",
 									"wordWrap": true
 								},
 								{
@@ -117,13 +129,13 @@
 										"$ref": "AAAAAAF4zHSxhQfsRvg="
 									},
 									"font": "Arial;26;0",
-									"left": -8,
-									"top": 80,
+									"left": -6,
+									"top": 128,
 									"height": 26
 								}
 							],
 							"font": "Arial;26;0",
-							"left": 608,
+							"left": 606,
 							"top": 656,
 							"width": 193,
 							"height": 98,
@@ -141,6 +153,18 @@
 								"$ref": "AAAAAAF4zHWolwf4e1E="
 							},
 							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGHdPvQNzOUX7U=",
+									"_parent": {
+										"$ref": "AAAAAAF4zHWolwf6rws="
+									},
+									"font": "Arial;13;0",
+									"left": 346,
+									"top": 685,
+									"width": 93.69775390625,
+									"height": 13
+								},
 								{
 									"_type": "LabelView",
 									"_id": "AAAAAAGHbKB2M97yAT4=",
@@ -237,6 +261,18 @@
 							"subViews": [
 								{
 									"_type": "LabelView",
+									"_id": "AAAAAAGHdPvQODOdpzo=",
+									"_parent": {
+										"$ref": "AAAAAAF4zHZLXAgSVVE="
+									},
+									"font": "Arial;13;0",
+									"left": 986,
+									"top": 685,
+									"width": 98.26806640625,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
 									"_id": "AAAAAAGHbKB2NN76LUo=",
 									"_parent": {
 										"$ref": "AAAAAAF4zHZLXAgSVVE="
@@ -328,6 +364,18 @@
 								"$ref": "AAAAAAF4zHaq5ggodbs="
 							},
 							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGHdPvQODOmrU0=",
+									"_parent": {
+										"$ref": "AAAAAAF4zHaq5ggqYcw="
+									},
+									"font": "Arial;13;0",
+									"left": 674,
+									"top": 477,
+									"width": 57.79541015625,
+									"height": 13
+								},
 								{
 									"_type": "LabelView",
 									"_id": "AAAAAAGHbKB2NN8C9sw=",
@@ -432,13 +480,13 @@
 									},
 									"font": "Arial;13;0",
 									"showShadow": false,
-									"left": 460,
-									"top": 655,
+									"left": 463,
+									"top": 663,
 									"width": 116.33984375,
 									"height": 13,
 									"autoResize": true,
-									"alpha": -4.345215481618061,
-									"distance": 27.85677655436824,
+									"alpha": -4.390638925988131,
+									"distance": 18.973665961010276,
 									"hostEdge": {
 										"$ref": "AAAAAAF4zHhwTwhA70Q="
 									},
@@ -454,7 +502,7 @@
 								"$ref": "AAAAAAF4zHWolwf6rws="
 							},
 							"lineStyle": 2,
-							"points": "449:688;608:688",
+							"points": "449:688;606:688",
 							"nameLabel": {
 								"$ref": "AAAAAAF4zHhwTwhBNv8="
 							}
@@ -481,11 +529,11 @@
 									"font": "Arial;13;0",
 									"showShadow": false,
 									"left": 479,
-									"top": 703,
+									"top": 711,
 									"width": 98,
 									"height": 65,
-									"alpha": 1.5707966045726742,
-									"distance": 36,
+									"alpha": 1.5935199147919312,
+									"distance": 44.01136216933077,
 									"hostEdge": {
 										"$ref": "AAAAAAF4zMmNgAhPJho="
 									},
@@ -502,7 +550,7 @@
 								"$ref": "AAAAAAF4zHSxhQfsRvg="
 							},
 							"lineStyle": 2,
-							"points": "608:700;449:700",
+							"points": "606:700;449:700",
 							"nameLabel": {
 								"$ref": "AAAAAAF4zMmNgAhQ7Vg="
 							}
@@ -527,9 +575,9 @@
 										"$ref": "AAAAAAF4zMzzZAiIUx4="
 									},
 									"font": "Arial;13;0",
-									"left": 815,
+									"left": 816,
 									"top": 672,
-									"width": 154.39404296875,
+									"width": 151.7470703125,
 									"height": 13,
 									"autoResize": true,
 									"alpha": 4.493719505099046,
@@ -538,7 +586,7 @@
 										"$ref": "AAAAAAF4zMzzZAiK8XQ="
 									},
 									"edgePosition": 1,
-									"text": "Maintain Website and links"
+									"text": "Maintain website and links"
 								}
 							],
 							"font": "Arial;13;0",
@@ -549,7 +597,7 @@
 								"$ref": "AAAAAAF4zHZLXAgSVVE="
 							},
 							"lineStyle": 2,
-							"points": "976:696;800:696",
+							"points": "976:696;798:696",
 							"nameLabel": {
 								"$ref": "AAAAAAF4zMzzZAiL3/o="
 							}
@@ -611,7 +659,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF4w89QKTpSGKQ="
 					},
-					"name": "AfetBilgi.com",
+					"name": "afetbilgi.com",
 					"ownedElements": [
 						{
 							"_type": "DFDDataFlow",
@@ -667,7 +715,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF4zHZLXAgQ0xE="
 							},
-							"name": "Maintain Website and links",
+							"name": "Maintain website and links",
 							"source": {
 								"$ref": "AAAAAAF4zHZLXAgQ0xE="
 							},
