@@ -14,7 +14,7 @@
 \usepackage{dirtree}
 \usepackage{enumitem}
 \usepackage{float}
-\usepackage{geometry}
+\usepackage[margin=25mm]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{indentfirst}
@@ -31,10 +31,14 @@
 \usepackage[most]{tcolorbox}
 \usepackage{xifthen}
 \usepackage{xparse}
+\usepackage{adjustbox}
 
 % First the counter, Second the number
 \newcommand{\addnumbertofigure}[1]{\addtocounter{figure}{#1}\thefigure \addtocounter{figure}{-#1}}
-\newcommand{\afetbilgi}{\href{https://afetbilgi.com}{afetbilgi.com} }
+\newcommand{\afetbilgi}{{\href{https://afetbilgi.com}{afetbilgi.com}}}
+
+% Counter for Use Case ID
+\newcounter{useCaseID}
 
 \geometry{
   a4paper
@@ -54,11 +58,6 @@
   } \\
   \vspace{8pt}
 }
-
-% \titleformat{\paragraph}
-% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-% \titlespacing*{\paragraph}
-% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 % Updating array stretch for tables
 \renewcommand{\arraystretch}{2}
