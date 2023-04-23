@@ -22,6 +22,186 @@
 \vfill
 \newpage
 
+% Search for important resources
+\begin{table}[H]
+  \centering
+  \refstepcounter{useCaseID}
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{|p{.3\linewidth}|p{.7\linewidth}|}
+      \hline
+      \textbf{Use Case ID} & \theuseCaseID \\
+      \hline
+      \textbf{Use-Case Name} & Search for important resources \\
+      \hline
+      \textbf{Actors} & Victims or Volunteer \\
+      \hline
+      \textbf{Description} & Whenever a site user wants to display a important resource, he or she can view verified and updated resources such as crucial phone numbers and websites, which he or she can acquire necessary information. \\
+      \hline
+      \textbf{Data} & Verified and updated table of important resources such as crucial phones and website, and articles. \\
+      \hline
+      \textbf{Preconditions} & The directory must be updated and verified regularly for potential update on the related information. \\
+      \hline
+      \textbf{Stimulus} & User clicks on the relevant important resource listed as bold text buttons under the ``\texttt{Important Resources}'' category on the website. \\
+      \hline
+      \textbf{Basic Flow} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Crucial Phone Number}''
+            \item User displays the crucial phone numbers and related information to that phone number
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#1} & 
+        \begin{minipage}[ht]{\linewidth} 
+            \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+              \item User clicks on ``\texttt{Important Web Sites}''
+              \item User displays the websites with their name and external links
+              \item User clicks any of the presented external third party links
+              \item User redirected to verified third party website
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#2} &
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Useful Articles}''
+            \item User displays the titles and authors of the articles with an external links
+            \item User clicks any of the presented external third party links
+            \item User redirected to verified third party website
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Exception Flow} & - \\
+      \hline
+      \textbf{Post Conditions} & User is redirected to a verified external website out of the \afetbilgi\ domain \\
+      \hline
+    \end{tabular}
+  }
+  \caption{Use Case - Search for important resources}
+\end{table}
+
+% Search for general needs 
+\begin{table}[H]
+  \centering
+  \refstepcounter{useCaseID}
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{|p{.3\linewidth}|p{.7\linewidth}|}
+      \hline
+      \textbf{Use Case ID} & \theuseCaseID \\
+      \hline
+      \textbf{Use-Case Name} & Search for general needs \\
+      \hline
+      \textbf{Actors} & Victims or Volunteer \\
+      \hline
+      \textbf{Description} & Whenever a site user wants to display a one of the elements in general needs resource, he or she can view verified and updated related lists, which he or she can acquire necessary information. \\
+      \hline
+      \textbf{Data} & Verified and updated table of general needs such as gathering places, transportation aid and modile toilets. \\
+      \hline
+      \textbf{Preconditions} & The directory must be updated and verified regularly for potential update on the information. \\
+      \hline
+      \textbf{Stimulus} & User clicks on the relevant general need listed as bold text buttons under the ``\texttt{General Needs}'' category on the website. \\
+      \hline
+      \textbf{Basic Flow} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Safe Gathering Places}''
+            \item User selects city where he or she want to get related information
+            \item User displays the list of safe gathering areas in selected city with map link to the address and source of the information
+            \item User clicks map or source link
+            \item User is redirected to google maps or the source
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#1} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Transportation Aid}''
+            \item User displays the list of transportation aids with name, details, validity and source of the information
+            \item User clicks source link
+            \item User is redirected to external third party website
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#2} &
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Mobile Toilets Articles}''
+            \item User redirected to verified source
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Exception Flow} & - \\
+      \hline
+      \textbf{Post Conditions} & User is redirected to a verified external website out of the \afetbilgi\ domain \\
+      \hline
+    \end{tabular}
+  }
+  \caption{Use Case - Search for general needs}
+\end{table}
+
+% Search for healthcare
+\begin{table}[H]
+  \centering
+  \refstepcounter{useCaseID}
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{|p{.3\linewidth}|p{.7\linewidth}|}
+      \hline
+      \textbf{Use Case ID} & \theuseCaseID \\
+      \hline
+      \textbf{Use-Case Name} & Search for healthcare \\
+      \hline
+      \textbf{Actors} & Victims or Volunteer \\
+      \hline
+      \textbf{Description} & Whenever a site user wants to display a one of the elements in health services, he or she can view verified and updated related lists, which he or she can acquire necessary information. \\
+      \hline
+      \textbf{Data} & Verified and updated table of health services such as active hospitals, container pharmacies, and veterinarians. \\
+      \hline
+      \textbf{Preconditions} & The directory must be updated and verified regularly for potential update on the information. \\
+      \hline
+      \textbf{Stimulus} & User clicks on the relevant health service listed as bold text buttons under the ``\texttt{Health Services}'' category on the website. \\
+      \hline
+      \textbf{Basic Flow} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Active Hospitals}''
+            \item User selects city where he or she want to get related information
+            \item User displays the list of active hospitals areas in selected city with map link to the address and source of the information
+            \item User clicks location link
+            \item User is redirected to google maps
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#1} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Container Pharmacy}''
+            \item User displays the list of container pharmacies with city, district and location of the information
+            \item User clicks location link
+            \item User is redirected to google maps
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#2} &
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks on ``\texttt{Veterinarians}''
+            \item User selects city where he or she want to get related information
+            \item User displays the list of veterinarians in selected city with name, map link to the address and contact of the information
+            \item User clicks map link or contact information
+            \item User is redirected to google maps or phone app
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Exception Flow} & - \\
+      \hline
+      \textbf{Post Conditions} & User is redirected to a verified external website or app out of the \afetbilgi\ domain \\
+      \hline
+    \end{tabular}
+  }
+  \caption{Use Case - Search for healthcare}
+\end{table}
+
+% Donate or Help
 \begin{table}[H]
   \centering
   \refstepcounter{useCaseID}
@@ -78,6 +258,14 @@
   \caption{Use Case - Donate or Help}
 \end{table}
 
+% Activity Diagram - Donate or Help
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/activity-diagram-donate-or-help.jpg}
+  \caption{Activity Diagram- Donate or Help}
+\end{figure}
+
+% Access open maps
 \begin{table}[H]
   \centering
   \refstepcounter{useCaseID}
@@ -127,6 +315,14 @@
   \caption{Use Case - Access open maps}
 \end{table}
 
+% State Diagram - Access open maps
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{img/state-diagram-access-map.jpg}
+  \caption{State Diagram - Acces Open Maps}
+\end{figure}
+
+% Generate PDFs to distribute website
 \begin{table}[H]
   \centering
   \refstepcounter{useCaseID}
@@ -167,6 +363,57 @@
     \end{tabular}
   }
   \caption{Use Case - Generate PDFs to distribute website}
+\end{table}
+
+% Sequence Diagram - Generate PDFs to distribute website
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/sequence-diagram-for-pdf.jpg}
+  \caption{Sequence Diagram - Generate PDFs to Distribute Website}
+\end{figure}
+
+% Language Control
+\begin{table}[H]
+  \centering
+  \refstepcounter{useCaseID}
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{|p{.3\linewidth}|p{.7\linewidth}|}
+      \hline
+      \textbf{Use Case ID} & \theuseCaseID \\
+      \hline
+      \textbf{Use-Case Name} & Language control \\
+      \hline
+      \textbf{Actors} & Victims or Volunteer \\
+      \hline
+      \textbf{Description} & Whenever a site user wants to change the language of the website, he or she can change the language to acquire necessary information in another language. \\
+      \hline
+      \textbf{Data} & The translated website data \\
+      \hline
+      \textbf{Preconditions} & The data must be translated into the selected language. \\
+      \hline
+      \textbf{Stimulus} & User opens and changes the language of website on the language selector dropdown menu located on the right top corner of the website. \\
+      \hline
+      \textbf{Basic Flow} & 
+        \begin{minipage}[ht]{\linewidth} 
+          \begin{enumerate}[label=\textbf{Step \arabic*:},leftmargin=1.5\leftmargin]
+            \item User clicks and opens the dropdown language menu
+            \item User selects the language that he or she wants to use
+            \item The website and its data is updated according the selected language
+            \item User starts browsing with the selected language
+          \end{enumerate}
+        \end{minipage} \\
+      \hline
+      \textbf{Alternative Flow \#1} & - \\
+      \hline
+      \textbf{Alternative Flow \#2} & - \\
+      \hline
+      \textbf{Exception Flow} & - \\
+      \hline
+      \textbf{Post Conditions} & User starts browsing with the selected language in the \afetbilgi \\
+      \hline
+    \end{tabular}
+  }
+  \caption{Use Case - Language control}
 \end{table}
 
 \vspace*{\fill}
