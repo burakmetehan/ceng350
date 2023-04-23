@@ -45,8 +45,14 @@
 }
 
 % Setting section depth for some use case
-% \setcounter{tocdepth}{5}
-% \setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% Format paragraph as subsubsubsection
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 % Title related settings
 \newcommand{\titleItem}[2]{
