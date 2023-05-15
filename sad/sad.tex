@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{alltt}
+\usepackage{array}
+\usepackage[backend=bibtex,style=ieee,]{biblatex}
+\usepackage{blindtext}
+\usepackage{bold-extra}
+\usepackage{caption}
+\usepackage{copyrightbox}
+\usepackage{dirtree}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[margin=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage[newfloat]{minted}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage{xifthen}
+\usepackage{xparse}
+\usepackage{adjustbox}
+
+% First the counter, Second the number
+\newcommand{\addnumbertofigure}[1]{\addtocounter{figure}{#1}\thefigure \addtocounter{figure}{-#1}}
+\newcommand{\afetbilgi}{{\href{https://afetbilgi.com}{afetbilgi.com}}}
+
+% Counter for Use Case ID
+\newcounter{useCaseID}
+
+\geometry{
+  a4paper
+}
+
+% Setting section depth for some use case
+% \setcounter{tocdepth}{5}
+% \setcounter{secnumdepth}{4}
+
+% Title related settings
+\newcommand{\titleItem}[2]{
+  \large{
+    \textbf{#1}
+  } \\
+  \large{
+    #2
+  } \\
+  \vspace{8pt}
+}
+
+% Updating array stretch for tables
+\renewcommand{\arraystretch}{2}
+
+% Increasing the spacing
+\doublespacing
+
+% References
+\bibliography{references}
+
+\begin{document}
+
+\input{sections/title.tex}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+
+\input{sections/1-introduction.tex}
+
+\input{sections/2-references.tex}
+
+\input{sections/3-glossary.tex}
+
+\input{sections/4-architectural-views.tex}
+
+\input{sections/5-architectural-views-for-suggestions-to-improve-the-existing-system.tex}
+
+\end{document}
