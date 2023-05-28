@@ -6,11 +6,17 @@
 
 \subsubsection{Context Diagram}
 
+\afetbilgi is not part of a more extensive system. It is a standalone and open-source efforted website to verify critical information in the fight against the 6 February 2023 Pazarcik Earthquake and deliver it to disaster victims and those who want to help in an understandable, concise manner in multiple languages.
+
+This information is presented in either the form of legible tables with third-party governmental and private links or an interactable method via a map view interface. If deemed necessary, admin and maintainers can make changes to display newly created or edited data and upload it to the system upon any complaints or suggestions they may get on their contact details.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{img/context-diagram-s5.jpg}
   \caption{Suggested Context Diagram}
 \end{figure}
+
+The afetbilgi.com consists of a combination of small physical and software parts. With the help of interfaces, these parts communicate among themselves and with the user.
 
 \subsubsection{External Interfaces}
 
@@ -19,6 +25,13 @@
   \includegraphics[width=\linewidth]{img/external-interfaces-diagram-s5.jpg}
   \caption{Suggested External Interfaces Diagram}
 \end{figure}
+
+As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi has multiple external interfaces. We have added MailServiceInterface, FeedbackFormInterface and AuthenticationInterface. The operations given in the diagram can be summarized as follows:
+\begin{itemize}
+  \item MailServiceInterface provides the option of sending mail about the updated information to the subscribed users.
+  \item FeedbackFormInterface provides the option of sending feedback related to website and the data. Users from the earthquake region can request for adding new information and notifying the wrong and expired infromation.
+  \item AuthenticationInterface provides the option of logging in. The authentication system is used to provide opportunity to authorized institutions and organizations to update the information from the website directly.
+\end{itemize}
 
 \subsubsection{Interaction Scenarios}
 
@@ -34,7 +47,25 @@
   \caption{Suggested Component Diagram}
 \end{figure}
 
+We have updated component diagram by adding the components for form, mail and authentication components:
+\begin{itemize}
+  \item Form provides user to send feedback about website and data so that the website and data can be updated according to the feedback by the normal users and victims.
+  \item Mail component sends mail about the updated information to the subscribed users.
+  \item Authentication component provide authorized users to register and login to the website by using Google Authentication system or built-in Authentication Module.
+\end{itemize}
+
 \subsubsection{Internal Interfaces}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/internal-interfaces-diagram-s5.jpg}
+  \caption{Suggested Internal Interfaces}
+\end{figure}
+
+
+Since, there is no internal dynamism between interfaces initially, we embraced the same approches. Therefore, the internal interfaces are just the data interfaces to provide structured information for frontend code so that frontend code can parse the information correctly and fastly.
+
+The main data is stored in the database and retrieved from database, so the frontend code parses the data.
 
 \subsubsection{Interaction Patterns}
 
@@ -57,5 +88,12 @@
   \includegraphics[width=\linewidth]{img/deployment-diagram-s5.jpg}
   \caption{Suggested Deployment Diagram}
 \end{figure}
+
+\begin{itemize}
+  \item Authentication provides authorized users to register and login. It uses two systems which are Google Authentication and built-in Authentication System.
+  \subitem Google Authentication access the Google API for authentication. Built-in authentication system use stored database information with JSON Web Tokens (JWT) for token based authentication system.
+  \item Form provides user to send feedback about website and data. Forms to provide feedbacks are defined according to needs. Some operations such as uploading image as well as the basic form operations such as submitting.
+  \item Mail modeule sends mails if there is an update in the website.
+\end{itemize}
 
 \subsection{Design Rationale}
