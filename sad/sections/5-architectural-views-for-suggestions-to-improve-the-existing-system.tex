@@ -4,6 +4,8 @@
 
 \subsubsection{Stakeholders' Uses of This View}
 
+This perspective provides an overview of the system's context, including the actors and other related systems in a general manner. Website maintainers and data collections of Afetbilgi primarily utilize this view to gain a better understanding of how different actors interact within the website and the system's relationship with external entities like AWS components and the Maps API component.
+
 \subsubsection{Context Diagram}
 
 \afetbilgi is not part of a more extensive system. It is a standalone and open-source efforted website to verify critical information in the fight against the 6 February 2023 Pazarcik Earthquake and deliver it to disaster victims and those who want to help in an understandable, concise manner in multiple languages.
@@ -35,9 +37,17 @@ As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi has multiple
 
 \subsubsection{Interaction Scenarios}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/activity-diagram-1-s5.jpg}
+  \caption{Activity Diagram | User Authentication Interface Interaction}
+\end{figure}
+
 \subsection{Functional View}
 
 \subsubsection{Stakeholders' Uses of This View}
+
+This view illustrates the system's various components and their interactions, including internal interfaces. Stakeholders find this view crucial as it provides information about the system's functionalities, essential properties, and supports the development of other viewpoints and diagrams. Victims and volunteers may not find this view useful, but website maintainers and data collectors would greatly appreciate it as it helps them understand the internal components and potentially identify ways to enhance them.
 
 \subsubsection{Component Diagram}
 
@@ -69,9 +79,17 @@ The main data is stored in the database and retrieved from database, so the fron
 
 \subsubsection{Interaction Patterns}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/sequence-diagram-1-s5.jpg}
+  \caption{Sequence Diagram | User Changing Datapage}
+\end{figure}
+
 \subsection{Information View}
 
 \subsubsection{Stakeholders' Uses of This View}
+
+The information view focuses on the variables and data utilized and stored within the system during its operation, as per Rozanski's explanations. Although this open-source, static, and non-dynamic website does not employ a database infrastructure backend like mySQL, stakeholders such as website maintainers and data maintainers/validators would still find value in knowing which data pages and nodes are being exchanged. It allows them to identify any unreliable information being uploaded to the website's assets and datasheets.
 
 \subsubsection{Database Class Diagram}
 
@@ -80,6 +98,8 @@ The main data is stored in the database and retrieved from database, so the fron
 \subsection{Deployment View}
 
 \subsubsection{Stakeholders' Uses of This View}
+
+According to Rozanski's document, the deployment view represents the system's runtime environment, including hardware and external server elements. In the case of this project, website maintainers/admins would benefit from a basic understanding of the deployment diagram, such as running parser script files and setting up hot/cold sheets that are regularly updated to the latest.json file via the AWS S3 bucket. Additionally, future/long-term site maintainers would delve deeper into the deployment diagram to focus on individual components and enhance specific aspects, such as improving the security of coldsheets' static JSON files before merging them into the recent latest.json files.
 
 \subsubsection{Deployment Diagram}
 

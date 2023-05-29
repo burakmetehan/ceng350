@@ -4,6 +4,8 @@
 
 \subsubsection{Stakeholders' Uses of This View}
 
+In this view, system context is provided, with the actors and other systems related to it in a general manner. Website maintainers and Data collections of Afetbilgi will be the ones that primarily use this view to better understand how the different actors interact in the working of this website and the relationship that the system has with other external entities like the AWS components, Maps API component, and so on.
+
 \subsubsection{Context Diagram}
 
 % Checked in grammarly
@@ -59,6 +61,8 @@ Two different interaction scenarios are provided:
 \subsection{Functional View}
 
 \subsubsection{Stakeholders' Uses of This View}
+
+This view depicts the different components of the system and their interaction, including the internal interfaces. This is extremely important for the stakeholders as it gives information about the system's functionalities and the integral properties, it also gives way for other viewpoints and diagrams. As such victims and volunteers wont find this useful but website maintainers along with Data collectors would deeply appreciate this view to understand internal components and perhaps come up with ways to improve it.
 
 \subsubsection{Component Diagram}
 
@@ -116,6 +120,8 @@ The main data is stored in the AWS in \texttt{latest.json} and retrieved from AW
 
 \subsubsection{Stakeholders' Uses of This View}
 
+This view concerns the variables and the data used and stored in this system during use as per Rozanski's explanations. While this open-source, static and nondynamic website doesn't employ a database infrastructure backend like mySQL, stakeholders such as website maintainers along with data maintainers/validators would again appreciate to know which data pages and nodes are being exchanged and whether any unreliable information is being or has been uploaded to the website assets and datasheets.
+
 \subsubsection{Database Class Diagram}
 
 \begin{figure}[H]
@@ -126,9 +132,28 @@ The main data is stored in the AWS in \texttt{latest.json} and retrieved from AW
 
 \subsubsection{Operations on Data}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Operation & CRUD Operation \\ \hline
+    City::City & Create: City Profile with name \\
+               & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    City:: getCity() & Create: \\
+                     & Read: City for selection \\
+                     & Update: \\
+                     & Delete: \\ \hline
+  \end{tabular}
+  \caption{CRUD Operations on Data}
+\end{table}
+
 \subsection{Deployment View}
 
 \subsubsection{Stakeholders' Uses of This View}
+
+Rozanski's document explained the deployment view as the environment in which the system in running(inclusive of hardware/external server elements). As such in this project's case, the website maintainers/admins would be the ones to appreciate a basic amount of knowledge from the deployment diagram below such as the basic relations such as how to run parser script files and set up hot/cold sheets which are regularly updated to latest.json via the AWS s3 bucket. On the other hand, future/long term site maintainers would be wanting to take the analysis of the deployment diagram even further to develop and focus on individual parts comprising the components such as improving coldsheets' static json files that can be secured perhaps a bit more before being merged to formed recent latest.json files.
 
 \subsubsection{Deployment Diagram}
 
@@ -149,3 +174,13 @@ In our deployment diagram viewpoint, we show the deployment environment of the \
 \end{itemize}
 
 \subsection{Design Rationale}
+
+The whole afetbilgi website system is based on the premise and primary rationale that it's an open source, verified non-profit website, which aims to convey quick information to victims and volunteers alike without any user registration/related overhead requiring unnecessary time expenditure. It's based on a website with plain buttons and hierarchical routing leading to relevant datasheets as per need. All the views consisting of context, functional, information and deployment build on this.
+
+In the context view, the basic setup is explained in the context diagram showing how maintainers have set up the website of afetbilgi to be used by victims and volunteers alike. The external interface diagram further improves on this showing how the data validators used external services like Google Datasheets to fetch recent data, as well as AWS to use assimilated data from latest.json. On the other hand site maintainers and developers have also used Github Actions' CI/CD workflows to continuously update the website and check its data health regularly from the AWS S3 bucket where it's hosted and its DNS assignments are covered by Cloudflare. 
+
+In the functional view, we see the internal interfaces interact in a modern modular setup(as per object programming's interface and extension principles). On the computation component sides, it's explained how the website health is checked regularly using the workflow actions from Github on ubuntu environments with backups of data and the last health website saved to buckets in AWS, while on the internal interface we learn of modularized entities like TreeNode interfaces which strictly check how new data pages are added and how their typing match to the node description as per their specification. As the website is static and every such Data node(each having own webpage on the afetbilgi website) doesn't really interact with any other interface yet the sequence diagrams great demonstrate how new data(hot/cold) is added and conformed to the node specifications while the Workflows assimilate and eventually upload then to AWS as latest.json files(types checked and saved via schema.json too). 
+
+Information View reinforces the stand alone concept of this project with no backend databases and no area to upload any private information such user info/credit card detail,etc . The site data validators and maintainers  are the main stakeholders to appreciate this section, knowing which variables transmit and exchange within which interfaces as shown on the Database Class diagram. There are no explicit SQL classes or tables yet there is some sort of validation/role allotment needed for a user to be allowed to update data on the website. All the tables/datasheets have common elements of City, Source, Location and Map components present. The CRUD operations' table helps in having a basic summary of the presented data-altering options from the Database Class Diagram without too much technicalities. 
+
+Lastly, the Deployment View again explains the project repository and the modular nature of this project, with the files clearly set out. Over here, we see the dependent nature of this project with other external entities to upload data to or interact with such as the AWS bucket components and exchanging latest.json files with them along with type conformations in schema.json. Parser python files are run via external Github actions' ubuntu server to run and assimilate hot data sheets after fetching from the relevant Google Datasheets while cold sheets(manually added data) are simply copied and merged.
