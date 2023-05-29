@@ -93,7 +93,76 @@ The information view focuses on the variables and data utilized and stored withi
 
 \subsubsection{Database Class Diagram}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/database-class-diagram-s5.jpg}
+  \caption{Suggested Database Class Diagram}
+\end{figure}
+
 \subsubsection{Operations on Data}
+
+\begin{longtable}{|p{.3\linewidth}|p{.7\linewidth}|}
+    \hline
+    Operation & CRUD Operation \\ \hline
+    City::City() & Create: City Profile with name \\
+               & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    City:: getCity() & Create: \\
+                     & Read: City for selection \\
+                     & Update: \\
+                     & Delete: \\ \hline
+    
+
+
+
+
+
+    % Burak's Part
+    MailSubscription :: MailSubscription() & Create: Create new MailSubscription item with given topicId \\
+                                         & Read: \\
+                                         & Update: \\
+                                         & Delete: \\ \hline
+    MailSubscription :: subscribeTopic() & Create: \\
+                                       & Read: \\
+                                       & Update: Add user to the users list of the subcription item \\
+                                       & Delete: \\ \hline
+    MailSubscription :: unsubscribeTopic() & Create: \\
+                                         & Read: \\
+                                         & Update: Remove user from the users list of the subcription item \\
+                                         & Delete: \\ \hline
+
+    User :: User() & Create: Create new user with given arguments \\
+                 & Read: \\
+                 & Update: \\
+                 & Delete \\ \hline
+    User :: removeUser() & Create: \\
+                       & Read: \\
+                       & Update: \\
+                       & Delete: Delete user with given id \\ \hline
+    User :: changeActivity() & Create: \\
+                           & Read: \\
+                           & Update: Update the activity status of the user \\
+                           & Delete: \\ \hline
+    User :: changeUsername() & Create: \\
+                           & Read: \\
+                           & Update: Update the username of the user \\
+                           & Delete: \\ \hline
+    User :: changePassword() & Create: \\
+                           & Read: \\
+                           & Update: Update the password of the user \\
+                           & Delete: \\ \hline
+
+    Roles :: Roles() & Create: Create new role with the given name \\
+                   & Read: \\
+                   & Update: \\
+                   & Delete: \\ \hline
+    Roles :: removeRole() & Create: \\
+                        & Read: \\
+                        & Update: \\
+                        & Delete: Remove the role with given integer \\ \hline
+  \caption{CRUD Operations on Data}
+\end{longtable}
 
 \subsection{Deployment View}
 
