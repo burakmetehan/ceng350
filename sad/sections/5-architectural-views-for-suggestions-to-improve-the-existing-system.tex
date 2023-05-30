@@ -4,11 +4,14 @@
 
 \subsubsection{Stakeholders' Uses of This View}
 
-This perspective provides an overview of the system's context, including the actors and other related systems in a general manner. Website maintainers and data collections of Afetbilgi primarily utilize this view to gain a better understanding of how different actors interact within the website and the system's relationship with external entities like AWS components and the Maps API component.
+In this view, system context is provided, with the actors and other systems related to it in a general manner. Website maintainers and Data collections of \afetbilgi\ will be the ones that primarily use this view to better understand how the different actors interact in the working of this website and the relationship that the system has with other external entities like the AWS components, Maps API component, and so on. In addition, Authentication has been added and can use Google API as a reliable 3rd party user registration handling as well along with an embedded Mail subscription handling module to inform users of potential alerts given the ongoing emergency situation about the earthquake.  Similar interfaces are further explained in our added components in the external diagram. 
+
+\vspace*{\fill}
+\newpage
 
 \subsubsection{Context Diagram}
 
-\afetbilgi is not part of a more extensive system. It is a standalone and open-source efforted website to verify critical information in the fight against the 6 February 2023 Pazarcik Earthquake and deliver it to disaster victims and those who want to help in an understandable, concise manner in multiple languages.
+\afetbilgi\ is not part of a more extensive system. It is a standalone and open-source efforted website to verify critical information in the fight against the 6 February 2023 Pazarcik Earthquake and deliver it to disaster victims and those who want to help in an understandable, concise manner in multiple languages.
 
 This information is presented in either the form of legible tables with third-party governmental and private links or an interactable method via a map view interface. If deemed necessary, admin and maintainers can make changes to display newly created or edited data and upload it to the system upon any complaints or suggestions they may get on their contact details.
 
@@ -18,7 +21,7 @@ This information is presented in either the form of legible tables with third-pa
   \caption{Suggested Context Diagram}
 \end{figure}
 
-The afetbilgi.com consists of a combination of small physical and software parts. With the help of interfaces, these parts communicate among themselves and with the user.
+The \afetbilgi\ consists of a combination of small physical and software parts. With the help of interfaces, these parts communicate among themselves and with the user.
 
 \subsubsection{External Interfaces}
 
@@ -28,7 +31,7 @@ The afetbilgi.com consists of a combination of small physical and software parts
   \caption{Suggested External Interfaces Diagram}
 \end{figure}
 
-As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi has multiple external interfaces. We have added MailServiceInterface, FeedbackFormInterface and AuthenticationInterface. The operations given in the diagram can be summarized as follows:
+As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi\ has multiple external interfaces. We have added MailServiceInterface, FeedbackFormInterface and AuthenticationInterface. The operations given in the diagram can be summarized as follows:
 \begin{itemize}
   \item MailServiceInterface provides the option of sending mail about the updated information to the subscribed users.
   \item FeedbackFormInterface provides the option of sending feedback related to website and the data. Users from the earthquake region can request for adding new information and notifying the wrong and expired infromation.
@@ -47,7 +50,7 @@ As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi has multiple
 
 \subsubsection{Stakeholders' Uses of This View}
 
-This view illustrates the system's various components and their interactions, including internal interfaces. Stakeholders find this view crucial as it provides information about the system's functionalities, essential properties, and supports the development of other viewpoints and diagrams. Victims and volunteers may not find this view useful, but website maintainers and data collectors would greatly appreciate it as it helps them understand the internal components and potentially identify ways to enhance them.
+This view depicts the different components of the system and their interaction, including the internal interfaces. This is extremely important for the stakeholders as it gives information about the system’s functionalities and the integral properties, it also gives way for other viewpoints and diagrams. As such victims and volunteers wont find this useful but website maintainers along with Data collectors would deeply appreciate this view to understand internal components and perhaps come up with ways to improve it. Additional components such as Google authentication would be handled by external API request to handle user registration as well another internal component to handle mail subscription to registered users. Similar new internal interfaces handle these arrears and interact with these additional external components.
 
 \subsubsection{Component Diagram}
 
@@ -85,11 +88,14 @@ The main data is stored in the database and retrieved from database, so the fron
   \caption{Sequence Diagram | User Changing Datapage}
 \end{figure}
 
+\vspace*{\fill}
+\newpage
+
 \subsection{Information View}
 
 \subsubsection{Stakeholders' Uses of This View}
 
-The information view focuses on the variables and data utilized and stored within the system during its operation, as per Rozanski's explanations. Although this open-source, static, and non-dynamic website does not employ a database infrastructure backend like mySQL, stakeholders such as website maintainers and data maintainers/validators would still find value in knowing which data pages and nodes are being exchanged. It allows them to identify any unreliable information being uploaded to the website's assets and datasheets.
+This view concerns the variables and the data used and stored in this system during use as per Rozanski’s explanations. While this open-source, static and nondynamic website doesn’t employ a database infrastructure backend like mySQL, stakeholders such as website maintainers along with data maintainers/validators would again appreciate to know which data pages and nodes are being exchanged and whether any unreliable information is being or has been uploaded to the website assets and datasheets. In additional an essential user database class has been added with additional mail subscription classes to formalize and secure the website even further. As per allotted roles the user would have the autheorization to make changes onto the website.
 
 \subsubsection{Database Class Diagram}
 
@@ -103,34 +109,20 @@ The information view focuses on the variables and data utilized and stored withi
 
 \begin{longtable}{|p{.3\linewidth}|p{.7\linewidth}|}
     \hline
-    Operation & CRUD Operation \\ \hline
-    City::City() & Create: City Profile with name \\
-               & Read: \\
-               & Update: \\
-               & Delete: \\ \hline
-    City:: getCity() & Create: \\
-                     & Read: City for selection \\
-                     & Update: \\
-                     & Delete: \\ \hline
-    
-
-
-
-
-
+    New Operations & CRUD Operations \\ \hline
     % Burak's Part
-    MailSubscription :: MailSubscription() & Create: Create new MailSubscription item with given topicId \\
-                                         & Read: \\
-                                         & Update: \\
-                                         & Delete: \\ \hline
-    MailSubscription :: subscribeTopic() & Create: \\
-                                       & Read: \\
-                                       & Update: Add user to the users list of the subcription item \\
-                                       & Delete: \\ \hline
-    MailSubscription :: unsubscribeTopic() & Create: \\
-                                         & Read: \\
-                                         & Update: Remove user from the users list of the subcription item \\
-                                         & Delete: \\ \hline
+    MailSubscription :: & Create: Create new MailSubscription item with given topicId \\
+    MailSubscription()  & Read: \\
+                        & Update: \\
+                        & Delete: \\ \hline
+    MailSubscription :: & Create: \\
+    subscribeTopic()    & Read: \\
+                        & Update: Add user to the users list of the subcription item \\
+                        & Delete: \\ \hline
+    MailSubscription :: & Create: \\
+    unsubscribeTopic()  & Read: \\
+                        & Update: Remove user from the users list of the subcription item \\
+                        & Delete: \\ \hline
 
     User :: User() & Create: Create new user with given arguments \\
                  & Read: \\
@@ -164,11 +156,17 @@ The information view focuses on the variables and data utilized and stored withi
   \caption{CRUD Operations on Data}
 \end{longtable}
 
+\vspace*{\fill}
+\newpage
+
 \subsection{Deployment View}
 
 \subsubsection{Stakeholders' Uses of This View}
 
-According to Rozanski's document, the deployment view represents the system's runtime environment, including hardware and external server elements. In the case of this project, website maintainers/admins would benefit from a basic understanding of the deployment diagram, such as running parser script files and setting up hot/cold sheets that are regularly updated to the latest.json file via the AWS S3 bucket. Additionally, future/long-term site maintainers would delve deeper into the deployment diagram to focus on individual components and enhance specific aspects, such as improving the security of coldsheets' static JSON files before merging them into the recent latest.json files.
+Rozanski’s document explained the deployment view as the environment in which the system in running(inclusive of hardware/external server elements). As such in this project’s case, the website maintainers/admins would be the ones to appreciate a basic amount of knowledge from the deployment diagram below such as the basic relations such as how to run parser script files and set up hot/cold sheets which are regularly updated to latest.json via the AWS s3 bucket. 
+
+On the other hand, future/long term site maintainers would be wanting to take the analysis of the deployment diagram even further to develop and focus on individual parts comprising the components such as improving coldsheets’ static json files that can be secured perhaps a bit more before being merged to formed recent latest.json files. In addition, our static website will now have some dynamism such as a new interface(with a relevant js file in the react project) to generate forms for users to enter feedback after they have logged in/registered via the proper authentication webpage(also new).
+
 
 \subsubsection{Deployment Diagram}
 
@@ -186,3 +184,13 @@ According to Rozanski's document, the deployment view represents the system's ru
 \end{itemize}
 
 \subsection{Design Rationale}
+
+The entire \afetbilgi\ website system is based on the fundamental principle and primary objective of being an open-source, verified non-profit website. Its purpose is to provide quick information to victims and volunteers without requiring user registration or unnecessary time expenditure. The website is designed with simple buttons and hierarchical routing to relevant datasheets based on user needs. All the different views, including the context, functional, information, and deployment views, are built upon this foundation. In summary, we have proposed enhancements to increase the website's security and dynamism.
+
+In the context view, the diagram explains the basic setup of the \afetbilgi\ website for use by victims and volunteers. The external interface diagram demonstrates how data validators utilize external services like Google Datasheets to retrieve recent data, and AWS to incorporate data from latest.json. Site maintainers and developers also employ Github Actions' CI/CD workflows to continuously update the website and regularly check its data integrity from the AWS S3 bucket where it is hosted. DNS assignments are managed by Cloudflare. Additionally, we have added authentication using Google API as a reliable third-party user registration mechanism. A module for handling mail subscriptions has also been embedded to inform users about potential alerts related to ongoing earthquake emergencies. Similar interfaces are further elaborated in the added components of the external diagram.
+
+In the functional view, we observe the interaction of internal interfaces within a modern modular setup based on object programming principles of interfaces and extensions. The computation components involve regular website health checks using Github workflow actions on Ubuntu environments, with data backups and the last recorded website health saved to AWS buckets. On the internal interface side, modularized entities like TreeNode interfaces ensure proper addition of new data pages and validate their typing according to node descriptions specified. Although the website is static and each data node (having its own webpage on \afetbilgi) does not directly interact with other interfaces, the sequence diagrams effectively demonstrate the process of adding and conforming new data (hot/cold) to node specifications, with workflows assimilating and eventually uploading them to AWS as latest.json files (type-checked and saved via schema.json). Additional components such as Google authentication are handled through external API requests for user registration, and there are internal components for managing mail subscriptions to registered users. Similar new internal interfaces handle these aspects and interact with the additional external components.
+
+The Information View reinforces the project's concept of being stand-alone, with no backend databases or areas for uploading private information such as user details or credit card information. The main stakeholders who appreciate this section are the site data validators and maintainers. The Database Class diagram illustrates the transmission and exchange of variables within interfaces. Although there are no explicit SQL classes or tables, some form of validation and role assignment is required for users to be allowed to update data on the website. All tables and datasheets have common elements like City, Source, Location, and Map components. The CRUD operations table provides a basic summary of the available data-altering options based on the Database Class Diagram, without delving into excessive technical details. Furthermore, an essential user database class has been added, along with additional mail subscription classes, to further formalize and secure the website. Based on the assigned roles, users have authorization to make changes to the website.
+
+Lastly, the Deployment View explains the project repository and its modular nature, with clearly outlined files. This view highlights the project's dependencies on other external entities for data upload and interaction, such as AWS bucket components and exchanging latest.json files with them, along with type conformations defined in schema.json. Parser Python files are executed through external Github Actions' Ubuntu server to fetch and assimilate hot data sheets from relevant Google Datasheets, while cold sheets (manually added data) are simply copied and merged. Finally, the static website will now have some level of dynamism such as a new interface(with a relevant js file in the react project) to generate forms for users to enter feedback after they have logged in/registered via the proper authentication webpage(also new).

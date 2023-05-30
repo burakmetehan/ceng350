@@ -4,7 +4,7 @@
 
 \subsubsection{Stakeholders' Uses of This View}
 
-In this view, system context is provided, with the actors and other systems related to it in a general manner. Website maintainers and Data collections of Afetbilgi will be the ones that primarily use this view to better understand how the different actors interact in the working of this website and the relationship that the system has with other external entities like the AWS components, Maps API component, and so on.
+In this view, system context is provided, with the actors and other systems related to it in a general manner. Website maintainers and Data collections of \afetbilgi\ will be the ones that primarily use this view to better understand how the different actors interact in the working of this website and the relationship that the system has with other external entities like the AWS components, Maps API component, and so on.
 
 \subsubsection{Context Diagram}
 
@@ -21,26 +21,32 @@ This information is presented in either the form of legible tables with third-pa
 
 The \afetbilgi\ consists of a combination of small physical and software parts. With the help of interfaces, these parts communicate among themselves and with the user.
 
+\vspace*{\fill}
+\newpage
+
 \subsubsection{External Interfaces}
 
-In this section, the external interfaces of the \afetbilgi will be provided, as well as their operations and relationships.
+In this section, the external interfaces of the \afetbilgi\ will be provided, as well as their operations and relationships.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{img/external-interfaces-diagram.jpg}
+  \includegraphics[width=.95\linewidth]{img/external-interfaces-diagram.jpg}
   \caption{External Interfaces}
 \end{figure}
 
-As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi has multiple external interfaces. UserClient, Website, Leafler, AWS, Developer, Google Sheets for data, Data Collectors and Validators are external interfaces of the system. Github Repository for the \afetbilgi may also ve considered an external interface since it is generally responsible for sustainability of the system. The operations given in the diagram can be summarized as follows:
+As it can be observed from Figure \addnumbertofigure{0}, \afetbilgi\ has multiple external interfaces. UserClient, Website, Leafler, AWS, Developer, Google Sheets for data, Data Collectors and Validators are external interfaces of the system. Github Repository for the \afetbilgi\ may also ve considered an external interface since it is generally responsible for sustainability of the system. The operations given in the diagram can be summarized as follows:
 
 \begin{itemize}
   \item The Data Collectors and Validators collect data and validate it. After validation, data is added into a specificied data sheet in Google Sheets.
   \item Google Sheets mainly store the data. The data is divided into several files in Google Sheets. These sheets can be accessible for data collectors and validators.
   \item GitHub Repository is used storing the source code. Additionally, the GitHub workflows of the repository check, maintain and update the website in regular basis by executing the workflows in a determined period.
   \subitem Some workflows use the scripts in the repository to access sheets to get the recent data and create new updated \texttt{latest.json} and \texttt{schema.json} files. After completing the creation of these files, they are uploaded to Amazon Web Services (AWS). These workflows can be managed and updated by the developer.
-  \item Leaflet is used for the map of the afetbilgi. There is additional subdomain, whose link is \href{https://maps.afetbilgi.com}{maps.afetbilgi.com} for the complete map.
+  \item Leaflet is used for the map of the \afetbilgi. There is additional subdomain, whose link is \href{https://maps.afetbilgi.com}{maps.afetbilgi.com} for the complete map.
   \item UserClient initiate the connection with the website. It has some attributes that are provided to website and functionalities to control the website.
 \end{itemize}
+
+\vspace*{\fill}
+\newpage
 
 \subsubsection{Interaction Scenarios}
 
@@ -57,6 +63,9 @@ Two different interaction scenarios are provided:
   \includegraphics[width=\linewidth]{img/activity-diagram-2.jpg}
   \caption{Activity Diagram | GitHub Actions and Website Health Check}
 \end{figure}
+
+\vspace*{\fill}
+\newpage
 
 \subsection{Functional View}
 
@@ -130,19 +139,131 @@ This view concerns the variables and the data used and stored in this system dur
   \caption{Database Class Diagram}
 \end{figure}
 
+\vspace*{\fill}
+\newpage
+
 \subsubsection{Operations on Data}
 
+\renewcommand{\arraystretch}{1}
 \begin{longtable}{|p{.3\linewidth}|p{.7\linewidth}|}
     \hline
     Operation & CRUD Operation \\ \hline
     City :: City & Create: City Profile with name \\
-               & Read: \\
+                & Read: \\
                & Update: \\
                & Delete: \\ \hline
     City :: getCity() & Create: \\
                      & Read: City for selection \\
                      & Update: \\
                      & Delete: \\ \hline
+    City :: setCity() & Create: name for city name field\\
+                     & Read:  \\
+                     & Update: \\
+                     & Delete: previous city name\\ \hline
+    City :: resetData() & Create: \\
+                     & Read:  \\
+                     & Update: restart with default empty/null values for fields\\
+                     & Delete: existing field values \\ \hline
+    County ::  & Create: County Profile with name \\
+    County(name:String) & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    County :: getCounty() & Create:  \\
+                & Read: County for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    County :: & Create: county name  \\
+    setCounty(name:String) & Read: \\
+               & Update: \\
+               & Delete: previous county name field\\ \hline
+    County :: resetData() & Create:  \\
+                & Read: \\
+               & Update: restart with default empty/null values for fields\\
+               & Delete: existing field values\\ \hline
+    Source ::  & Create: Source Profile with relevant link \\
+    Source(link:String) & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    Source :: getSource() & Create:  \\
+                & Read: Source for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Source :: & Create: source link updated \\
+    setSource(link:String) & Read: \\
+               & Update: \\
+               & Delete: previous source link \\ \hline
+    Source :: getPlatform() & Create:  \\
+                & Read: Platform field(enumerated) for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Source ::  updatePlatform( & Create:  \\
+    platform:Enum) & Read: \\
+               & Update: platform field(enumeration)\\
+               & Delete: previous platform field(enumeration)\\ \hline
+    Source :: & Create:  \\
+    updateVerification( & Read: \\
+    Verification Bool, & Update: Verification Status and Time \\
+    VerificationDate:DateTime) & Delete: Previous Verification Status and Time \\ \hline
+    Source :: & Create:  \\
+    updateContactStatus( & Read: \\
+    Contacted:Bool) & Update: Contacted status \\
+               & Delete: Previous Contacted status\\ \hline
+    Source :: resetData() & Create:  \\
+                & Read: \\
+               & Update: restart with default empty/null values for fields\\
+               & Delete: existing field values\\ \hline
+    Contact :: & Create: Contact Profile with name  \\
+    Contact(name:String) & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    Contact :: & Create:  \\
+    getContactName() & Read: Contact Name field for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Contact :: & Create: name for contact \\
+    setContactName( & Read: \\
+    name:String) & Update: \\
+               & Delete: previous name for contact \\ \hline
+    Contact :: getNumber() & Create:  \\
+                & Read: Contact Phone Number field for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Contact :: & Create: phone number for contact \\
+    setNumber(phoneNumber:String) & Read: \\
+               & Update: \\
+               & Delete: previous phone number \\ \hline
+    Contact :: getEmail() & Create:  \\
+                & Read: Contact Email field for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Contact :: & Create: email for contact \\
+    setEmail(email: String) & Read: \\
+               & Update: previous email for contact\\
+               & Delete: \\ \hline
+    Contact :: resetData() & Create:  \\
+                & Read: \\
+               & Update: restart with default empty/null values for fields\\
+               & Delete: existing field values\\ \hline
+    Map :: Map(name:String) & Create: Map Profile with name  \\
+                & Read: \\
+               & Update: \\
+               & Delete: \\ \hline
+    Map :: setCoordinates( & Create: longitude and latitude float values \\
+    Lat:Float, Long:Float) & Read: \\
+               & Update: : longitude and latitude float values \\
+               & Delete: \\ \hline
+    Map :: fetchCoordinates() & Create:  \\
+                & Read: Longitude and Latitude Coordinates for selection\\
+               & Update: \\
+               & Delete: \\ \hline
+    Map :: & Create:  \\
+    updateInfo(data:String) & Read: \\
+               & Update: additional data is updated\\
+               & Delete: previous data is deleted\\ \hline
+    Map ::  resetData() & Create:  \\
+                & Read: \\
+               & Update: restart with default empty/null values for fields \\
+               & Delete: existing field values \\ \hline
   \caption{CRUD Operations on Data}
 \end{longtable}
 
@@ -172,12 +293,15 @@ In our deployment diagram viewpoint, we show the deployment environment of the \
 
 \subsection{Design Rationale}
 
-The whole afetbilgi website system is based on the premise and primary rationale that it's an open source, verified non-profit website, which aims to convey quick information to victims and volunteers alike without any user registration/related overhead requiring unnecessary time expenditure. It's based on a website with plain buttons and hierarchical routing leading to relevant datasheets as per need. All the views consisting of context, functional, information and deployment build on this.
+The whole \afetbilgi\ website system is based on the premise and primary rationale that it's an open source, verified non-profit website, which aims to convey quick information to victims and volunteers alike without any user registration/related overhead requiring unnecessary time expenditure. It's based on a website with plain buttons and hierarchical routing leading to relevant datasheets as per need. All the views consisting of context, functional, information and deployment build on this.
 
-In the context view, the basic setup is explained in the context diagram showing how maintainers have set up the website of afetbilgi to be used by victims and volunteers alike. The external interface diagram further improves on this showing how the data validators used external services like Google Datasheets to fetch recent data, as well as AWS to use assimilated data from latest.json. On the other hand site maintainers and developers have also used Github Actions' CI/CD workflows to continuously update the website and check its data health regularly from the AWS S3 bucket where it's hosted and its DNS assignments are covered by Cloudflare. 
+In the context view, the basic setup is explained in the context diagram showing how maintainers have set up the website of \afetbilgi\ to be used by victims and volunteers alike. The external interface diagram further improves on this showing how the data validators used external services like Google Datasheets to fetch recent data, as well as AWS to use assimilated data from latest.json. On the other hand site maintainers and developers have also used Github Actions' CI/CD workflows to continuously update the website and check its data health regularly from the AWS S3 bucket where it's hosted and its DNS assignments are covered by Cloudflare. 
 
-In the functional view, we see the internal interfaces interact in a modern modular setup(as per object programming's interface and extension principles). On the computation component sides, it's explained how the website health is checked regularly using the workflow actions from Github on ubuntu environments with backups of data and the last health website saved to buckets in AWS, while on the internal interface we learn of modularized entities like TreeNode interfaces which strictly check how new data pages are added and how their typing match to the node description as per their specification. As the website is static and every such Data node(each having own webpage on the afetbilgi website) doesn't really interact with any other interface yet the sequence diagrams great demonstrate how new data(hot/cold) is added and conformed to the node specifications while the Workflows assimilate and eventually upload then to AWS as latest.json files(types checked and saved via schema.json too). 
+In the functional view, we see the internal interfaces interact in a modern modular setup(as per object programming's interface and extension principles). On the computation component sides, it's explained how the website health is checked regularly using the workflow actions from Github on ubuntu environments with backups of data and the last health website saved to buckets in AWS, while on the internal interface we learn of modularized entities like TreeNode interfaces which strictly check how new data pages are added and how their typing match to the node description as per their specification. As the website is static and every such Data node(each having own webpage on the \afetbilgi\ website) doesn't really interact with any other interface yet the sequence diagrams great demonstrate how new data(hot/cold) is added and conformed to the node specifications while the Workflows assimilate and eventually upload then to AWS as latest.json files(types checked and saved via schema.json too). 
 
 Information View reinforces the stand alone concept of this project with no backend databases and no area to upload any private information such user info/credit card detail,etc . The site data validators and maintainers  are the main stakeholders to appreciate this section, knowing which variables transmit and exchange within which interfaces as shown on the Database Class diagram. There are no explicit SQL classes or tables yet there is some sort of validation/role allotment needed for a user to be allowed to update data on the website. All the tables/datasheets have common elements of City, Source, Location and Map components present. The CRUD operations' table helps in having a basic summary of the presented data-altering options from the Database Class Diagram without too much technicalities. 
+
+\vspace*{\fill}
+\newpage
 
 Lastly, the Deployment View again explains the project repository and the modular nature of this project, with the files clearly set out. Over here, we see the dependent nature of this project with other external entities to upload data to or interact with such as the AWS bucket components and exchanging latest.json files with them along with type conformations in schema.json. Parser python files are run via external Github actions' ubuntu server to run and assimilate hot data sheets after fetching from the relevant Google Datasheets while cold sheets(manually added data) are simply copied and merged.
